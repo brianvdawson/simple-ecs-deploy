@@ -15,13 +15,13 @@ pipeline {
 
        stage("func test") {
             steps {
-                echo 'Test'
+                echo 'Func Test'
             }
        }
 
        stage("stage") {
             steps {
-                echo 'Test'
+                echo 'Deploy to Stage'
             }
        }
 
