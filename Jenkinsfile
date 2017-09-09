@@ -11,7 +11,7 @@ pipeline {
        }
 
        stage("Package Image") {
-            docker.build('simple-ecs-webapp')
+
             steps {
                 echo 'Test'
 
