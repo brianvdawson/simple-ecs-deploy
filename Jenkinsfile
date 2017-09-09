@@ -3,7 +3,7 @@ pipeline {
     stages{
        stage("Build") {
             steps {
-                echo 'Build'
+                echo 'Build application'
                 sh 'cd simple-ecs-webapp; mvn clean install'
 
             }
@@ -12,8 +12,10 @@ pipeline {
        stage("Package Image") {
 
             steps {
-                echo 'Test'
-                docker.build('simple-ecs-webapp')
+                echo 'Build container image'
+                script{
+                    docker.build('simple-ecs-webapp')
+                }
 
             }
        }
