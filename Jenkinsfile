@@ -4,8 +4,7 @@ pipeline {
        stage("build") {
             steps {
                 echo 'Build'
-                sh 'cd simple-ecs-webapp'
-                sh 'mvn clean install'
+                sh 'cd simple-ecs-webapp; mvn clean install'
 
             }
        }
