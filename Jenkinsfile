@@ -1,8 +1,11 @@
 pipeline {
-    agent{
-    stage (build){
+    agent none {
+    stages{
+       stage build {
         step{
             echo "hello world"
+        }
+
         }
 
     }
