@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages{
-       stage("build") {
+       stage("Build") {
             steps {
                 echo 'Build'
                 sh 'cd simple-ecs-webapp; mvn clean install'
@@ -13,23 +13,24 @@ pipeline {
 
             steps {
                 echo 'Test'
+                sh 'docker build -t simple-ecs-webapp .'
 
             }
        }
 
-       stage("func test") {
+       stage("Test") {
             steps {
                 echo 'Func Test'
             }
        }
 
-       stage("stage") {
+       stage("Stage") {
             steps {
                 echo 'Deploy to Stage'
             }
        }
 
-      stage("deploy") {
+      stage("Deploy") {
                   steps {
                       echo 'deployed'
                   }
