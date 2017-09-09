@@ -4,14 +4,16 @@ pipeline {
        stage("build") {
             steps {
                 echo 'Build'
-                sh 'mvn --version'
+                sh 'cd simple-ecs-webapp'
+                sh 'mvn clean install'
 
             }
        }
 
-       stage("test") {
+       stage("Package Image") {
             steps {
                 echo 'Test'
+                docker.build
             }
        }
 
