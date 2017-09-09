@@ -13,7 +13,7 @@ pipeline {
 
             steps {
                 echo 'Test'
-                sh 'sudo docker build -t simple-ecs-webapp .'
+                docker.build('simple-ecs-webapp')
 
             }
        }
