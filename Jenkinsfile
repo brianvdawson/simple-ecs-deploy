@@ -24,7 +24,9 @@ pipeline {
        stage("Test") {
             steps {
                 echo 'Func Test'
-                sh 'docker run -p 8082:8080 simple-ecs-webapp:latest'
+                sh 'docker run -d -p 8082:8080 -n simple-web-app simple-ecs-webapp:latest'
+                sh 'curl http://localhost:8082/simple-ecs-webapp'
+                sh 'docker contaniner stop simple-web-app'
 
             }
        }
