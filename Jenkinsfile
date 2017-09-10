@@ -25,7 +25,7 @@ pipeline {
             steps {
                 echo 'Func Test'
                 sh 'docker run -d -p 8082:8080 --name simple-web-app simple-ecs-webapp:latest'
-                sh 'curl http://localhost:8082/simple-ecs-webapp'
+                sleep 30
                 sh 'docker contaniner stop simple-web-app'
 
             }
