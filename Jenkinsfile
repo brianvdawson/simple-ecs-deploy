@@ -32,6 +32,7 @@ pipeline {
        stage("Publish") {
             steps {
                 echo 'Deploy to Docker Repository'
+                sh 'docker tag simple-ecs-webapp:latest 050098408429.dkr.ecr.us-west-1.amazonaws.com/simple-ecs-webapp:latest'
                 sh 'docker push 050098408429.dkr.ecr.us-west-1.amazonaws.com/simple-ecs-webapp'
             }
        }
