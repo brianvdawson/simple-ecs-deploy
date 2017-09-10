@@ -24,11 +24,11 @@ pipeline {
        stage("Test") {
             steps {
                 echo 'Func Test'
-                sh 'docker contaniner stop simple-web-app'
+                sh 'docker container stop simple-web-app'
                 sleep 10
                 sh 'docker run -d -p 8082:8080 --name simple-web-app simple-ecs-webapp:latest'
                 sleep 30
-                sh 'docker contaniner stop simple-web-app'
+                sh 'docker container stop simple-web-app'
 
             }
        }
