@@ -24,6 +24,8 @@ pipeline {
        stage("Test") {
             steps {
                 echo 'Func Test'
+                sh 'docker run -p 8081:8080 simple-ecs-webapp:latest'
+
             }
        }
 
