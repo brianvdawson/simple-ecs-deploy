@@ -4,6 +4,7 @@ pipeline {
        stage("Build") {
             steps {
                 echo 'Build application'
+                checkout scm
                 sh 'cd simple-ecs-webapp; mvn clean install'
 
             }
