@@ -24,14 +24,15 @@ pipeline {
        stage("Test") {
             steps {
                 echo 'Func Test'
-                sh 'docker run -p 8081:8080 simple-ecs-webapp:latest'
+                sh 'docker run -p 8082:8080 simple-ecs-webapp:latest'
 
             }
        }
 
-       stage("Stage") {
+       stage("Publish") {
             steps {
-                echo 'Deploy to Stage'
+                echo 'Deploy to Docker Repository'
+                sh 'docker push 050098408429.dkr.ecr.us-west-1.amazonaws.com/simple-ecs-webapp'
             }
        }
 
